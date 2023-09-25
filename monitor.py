@@ -1,5 +1,7 @@
 # here we have coded a watch-script that monitors the directory for CRUD changes. 
-# every log is documented in the Terminal
+# every log is documented in log file 
+
+# reference Source: https://www.youtube.com/watch?v=M9CT6MMry0U&ab_channel=JCharisTech 
 
 import sys
 import time
@@ -17,8 +19,10 @@ class CustomLoggingEventHandler(LoggingEventHandler):
     def on_modified(self, event):
         if not event.src_path.endswith(LOG_FILE_EXT):
             return super().on_modified(event)
-
-
+        
+    # backup the directory 
+    # create a function for backing up files
+    
 
 
 # Observer - for monitoring directory or file for events 
